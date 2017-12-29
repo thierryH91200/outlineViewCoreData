@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		034E86771FF579BE006F3003 /* Group+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034E86751FF579BE006F3003 /* Group+CoreDataClass.swift */; };
+		034E86781FF579BE006F3003 /* Group+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034E86761FF579BE006F3003 /* Group+CoreDataProperties.swift */; };
 		038F96ED1FE7BB7E00606CB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038F96EC1FE7BB7E00606CB9 /* AppDelegate.swift */; };
 		038F96F01FE7BB7E00606CB9 /* outlineViewCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 038F96EE1FE7BB7E00606CB9 /* outlineViewCoreData.xcdatamodeld */; };
 		038F96F21FE7BB7E00606CB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 038F96F11FE7BB7E00606CB9 /* Assets.xcassets */; };
 		038F96F51FE7BB7E00606CB9 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 038F96F31FE7BB7E00606CB9 /* MainMenu.xib */; };
 		038F97011FE7BB7E00606CB9 /* outlineViewCoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038F97001FE7BB7E00606CB9 /* outlineViewCoreDataTests.swift */; };
 		038F970C1FE7BB7E00606CB9 /* outlineViewCoreDataUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038F970B1FE7BB7E00606CB9 /* outlineViewCoreDataUITests.swift */; };
+		038F971B1FE7C03D00606CB9 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038F97191FE7C03D00606CB9 /* MainWindowController.swift */; };
+		038F971C1FE7C03D00606CB9 /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 038F971A1FE7C03D00606CB9 /* MainWindowController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		034E86751FF579BE006F3003 /* Group+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Group+CoreDataClass.swift"; sourceTree = "<group>"; };
+		034E86761FF579BE006F3003 /* Group+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Group+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		038F96E91FE7BB7E00606CB9 /* outlineViewCoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = outlineViewCoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		038F96EC1FE7BB7E00606CB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		038F96EF1FE7BB7E00606CB9 /* outlineViewCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = outlineViewCoreData.xcdatamodel; sourceTree = "<group>"; };
@@ -46,6 +52,8 @@
 		038F97071FE7BB7E00606CB9 /* outlineViewCoreDataUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = outlineViewCoreDataUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		038F970B1FE7BB7E00606CB9 /* outlineViewCoreDataUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = outlineViewCoreDataUITests.swift; sourceTree = "<group>"; };
 		038F970D1FE7BB7E00606CB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		038F97191FE7C03D00606CB9 /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		038F971A1FE7C03D00606CB9 /* MainWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindowController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,12 +104,16 @@
 		038F96EB1FE7BB7E00606CB9 /* outlineViewCoreData */ = {
 			isa = PBXGroup;
 			children = (
+				034E86751FF579BE006F3003 /* Group+CoreDataClass.swift */,
+				034E86761FF579BE006F3003 /* Group+CoreDataProperties.swift */,
 				038F96EC1FE7BB7E00606CB9 /* AppDelegate.swift */,
 				038F96F11FE7BB7E00606CB9 /* Assets.xcassets */,
 				038F96F31FE7BB7E00606CB9 /* MainMenu.xib */,
 				038F96F61FE7BB7E00606CB9 /* Info.plist */,
 				038F96F71FE7BB7E00606CB9 /* outlineViewCoreData.entitlements */,
 				038F96EE1FE7BB7E00606CB9 /* outlineViewCoreData.xcdatamodeld */,
+				038F97191FE7C03D00606CB9 /* MainWindowController.swift */,
+				038F971A1FE7C03D00606CB9 /* MainWindowController.xib */,
 			);
 			path = outlineViewCoreData;
 			sourceTree = "<group>";
@@ -193,6 +205,14 @@
 					038F96E81FE7BB7E00606CB9 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					038F96FB1FE7BB7E00606CB9 = {
 						CreatedOnToolsVersion = 9.2;
@@ -232,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				038F96F21FE7BB7E00606CB9 /* Assets.xcassets in Resources */,
+				038F971C1FE7C03D00606CB9 /* MainWindowController.xib in Resources */,
 				038F96F51FE7BB7E00606CB9 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,7 +279,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				038F96F01FE7BB7E00606CB9 /* outlineViewCoreData.xcdatamodeld in Sources */,
+				034E86771FF579BE006F3003 /* Group+CoreDataClass.swift in Sources */,
+				034E86781FF579BE006F3003 /* Group+CoreDataProperties.swift in Sources */,
 				038F96ED1FE7BB7E00606CB9 /* AppDelegate.swift in Sources */,
+				038F971B1FE7C03D00606CB9 /* MainWindowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +383,7 @@
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 			};
 			name = Debug;
 		};
@@ -408,6 +433,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 			};
 			name = Release;
 		};
@@ -415,13 +441,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = outlineViewCoreData/outlineViewCoreData.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 84WLNJ2YG4;
 				INFOPLIST_FILE = outlineViewCoreData/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.thierry24100..outlineViewCoreData;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -430,13 +459,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = outlineViewCoreData/outlineViewCoreData.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 84WLNJ2YG4;
 				INFOPLIST_FILE = outlineViewCoreData/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.thierry24100..outlineViewCoreData;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
