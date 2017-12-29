@@ -29,7 +29,7 @@
                             <rect key="frame" x="1" y="0.0" width="478" height="289"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" autosaveColumns="NO" headerView="6va-nf-O7O" indentationPerLevel="16" outlineTableColumn="o6R-uq-gCJ" id="gvb-3N-817">
+                                <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="6va-nf-O7O" viewBased="YES" indentationPerLevel="16" outlineTableColumn="o6R-uq-gCJ" id="gvb-3N-817">
                                     <rect key="frame" x="0.0" y="0.0" width="478" height="266"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
@@ -48,6 +48,29 @@
                                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                            <prototypeCellViews>
+                                                <tableCellView id="XmO-Kj-3aB">
+                                                    <rect key="frame" x="1" y="1" width="475" height="17"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <subviews>
+                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QjL-pA-1cQ">
+                                                            <rect key="frame" x="0.0" y="0.0" width="475" height="17"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" title="Table View Cell" id="3go-DY-cbr">
+                                                                <font key="font" metaFont="system"/>
+                                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                            </textFieldCell>
+                                                            <connections>
+                                                                <binding destination="XmO-Kj-3aB" name="value" keyPath="objectValue.name" id="1Eo-JC-0xg"/>
+                                                            </connections>
+                                                        </textField>
+                                                    </subviews>
+                                                    <connections>
+                                                        <outlet property="textField" destination="QjL-pA-1cQ" id="RQn-N2-3ej"/>
+                                                    </connections>
+                                                </tableCellView>
+                                            </prototypeCellViews>
                                             <connections>
                                                 <binding destination="KWU-WS-xTV" name="value" keyPath="arrangedObjects.name" id="A1N-pS-dIi"/>
                                             </connections>
