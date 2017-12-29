@@ -2,7 +2,7 @@
 //  Group+CoreDataClass.swift
 //  outlineViewCoreData
 //
-//  Created by thierryH24 on 28/12/2017.
+//  Created by thierryH24 on 29/12/2017.
 //  Copyright © 2017 thierryH24. All rights reserved.
 //
 //

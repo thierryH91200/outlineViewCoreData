@@ -2,7 +2,7 @@
 //  Group+CoreDataProperties.swift
 //  outlineViewCoreData
 //
-//  Created by thierryH24 on 28/12/2017.
+//  Created by thierryH24 on 29/12/2017.
 //  Copyright © 2017 thierryH24. All rights reserved.
 //
 //
@@ -13,15 +13,13 @@ import CoreData
 
 extension Group {
 
-    
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Group> {
         return NSFetchRequest<Group>(entityName: "Group")
     }
 
-    @NSManaged   @objc public var name: String?
+    @NSManaged public var name: String?
     @NSManaged public var parent: Group?
     @NSManaged public var subGroups: NSSet?
-
 }
 
 // MARK: Generated accessors for subGroups

@@ -7,7 +7,6 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController" customModule="outlineViewCoreData" customModuleProvider="target">
             <connections>
-                <outlet property="arrayController" destination="Iz3-oM-WeQ" id="Knh-le-eR9"/>
                 <outlet property="myOutlineView" destination="gvb-3N-817" id="l6P-QV-rPb"/>
                 <outlet property="treeController" destination="KWU-WS-xTV" id="0d3-1w-kCY"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="X22-AO-qar"/>
@@ -75,33 +74,13 @@
                         </tableHeaderView>
                     </scrollView>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1Ds-JH-EYH">
-                        <rect key="frame" x="31" y="34" width="65" height="32"/>
+                        <rect key="frame" x="31" y="34" width="99" height="32"/>
                         <buttonCell key="cell" type="push" title="Add" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wHV-g5-RoV">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
-                            <action selector="add:" target="Iz3-oM-WeQ" id="tAG-Gc-3yG"/>
-                        </connections>
-                    </button>
-                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KO7-b8-vtw">
-                        <rect key="frame" x="369" y="34" width="76" height="32"/>
-                        <buttonCell key="cell" type="push" title="Dump" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="LhX-Eu-Qh5">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="foo:" target="-2" id="Ng4-a5-cUV"/>
-                        </connections>
-                    </button>
-                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="306-5W-ahp">
-                        <rect key="frame" x="134" y="34" width="89" height="32"/>
-                        <buttonCell key="cell" type="push" title="Remove" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="3w3-SR-3fE">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="remove:" target="Iz3-oM-WeQ" id="PR0-zq-hg8"/>
+                            <action selector="add:" target="KWU-WS-xTV" id="TQi-VO-vQL"/>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="y9T-xg-x7g">
@@ -114,32 +93,36 @@
                             <action selector="addChild:" target="KWU-WS-xTV" id="U9T-ku-UlG"/>
                         </connections>
                     </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="306-5W-ahp">
+                        <rect key="frame" x="167" y="34" width="89" height="32"/>
+                        <buttonCell key="cell" type="push" title="Remove" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="3w3-SR-3fE">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="remove:" target="KWU-WS-xTV" id="216-rp-13a"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="KO7-b8-vtw" secondAttribute="trailing" constant="41" id="4Kb-hr-aFP"/>
                     <constraint firstAttribute="trailing" secondItem="r6A-Mk-Czk" secondAttribute="trailing" constant="-1" id="5AL-1v-sBa"/>
                     <constraint firstItem="y9T-xg-x7g" firstAttribute="top" secondItem="1Ds-JH-EYH" secondAttribute="bottom" constant="12" id="6A2-vX-HA5"/>
-                    <constraint firstItem="306-5W-ahp" firstAttribute="leading" secondItem="1Ds-JH-EYH" secondAttribute="trailing" constant="50" id="Gib-8u-FlC"/>
-                    <constraint firstItem="KO7-b8-vtw" firstAttribute="top" secondItem="r6A-Mk-Czk" secondAttribute="bottom" constant="31" id="Gt8-5B-EzQ"/>
+                    <constraint firstItem="306-5W-ahp" firstAttribute="leading" secondItem="1Ds-JH-EYH" secondAttribute="trailing" constant="49" id="JYG-Dg-GGG"/>
                     <constraint firstItem="1Ds-JH-EYH" firstAttribute="top" secondItem="r6A-Mk-Czk" secondAttribute="bottom" constant="31" id="Mg6-JJ-lCH"/>
                     <constraint firstItem="1Ds-JH-EYH" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="37" id="Rcl-h4-e3W"/>
-                    <constraint firstItem="306-5W-ahp" firstAttribute="top" secondItem="r6A-Mk-Czk" secondAttribute="bottom" constant="31" id="Rmm-j6-LwA"/>
+                    <constraint firstItem="306-5W-ahp" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="173" id="UaJ-XM-BFC"/>
                     <constraint firstAttribute="bottom" secondItem="r6A-Mk-Czk" secondAttribute="bottom" constant="93" id="diN-Ou-jgQ"/>
                     <constraint firstItem="y9T-xg-x7g" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="37" id="tA1-is-oeR"/>
                     <constraint firstItem="r6A-Mk-Czk" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="1" id="uwr-QK-n4F"/>
                     <constraint firstItem="r6A-Mk-Czk" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="-1" id="wCx-q0-Dle"/>
+                    <constraint firstItem="306-5W-ahp" firstAttribute="baseline" secondItem="1Ds-JH-EYH" secondAttribute="baseline" id="yiU-I5-R8K"/>
                 </constraints>
             </view>
             <point key="canvasLocation" x="139" y="217"/>
         </window>
-        <arrayController mode="entity" entityName="Group" fetchPredicateFormat="parent == nil" automaticallyPreparesContent="YES" id="Iz3-oM-WeQ">
+        <treeController mode="entity" entityName="Group" fetchPredicateFormat="parent == nil" automaticallyPreparesContent="YES" childrenKeyPath="subGroups" id="KWU-WS-xTV">
             <connections>
-                <binding destination="-2" name="managedObjectContext" keyPath="self.managedObjectContext" id="3Jz-oy-tqc"/>
-            </connections>
-        </arrayController>
-        <treeController mode="entity" entityName="Group" fetchPredicateFormat="" automaticallyPreparesContent="YES" childrenKeyPath="subGroups" id="KWU-WS-xTV">
-            <connections>
-                <binding destination="Iz3-oM-WeQ" name="contentArray" keyPath="arrangedObjects" id="m0H-gd-cYX"/>
+                <binding destination="-2" name="managedObjectContext" keyPath="self.managedObjectContext" id="CTw-l8-6k9"/>
             </connections>
         </treeController>
     </objects>

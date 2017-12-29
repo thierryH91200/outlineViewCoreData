@@ -11,7 +11,6 @@ import Cocoa
 class MainWindowController: NSWindowController , NSOutlineViewDataSource {
     
     @IBOutlet var treeController: NSTreeController!
-    @IBOutlet var arrayController: NSArrayController!
     @IBOutlet weak var myOutlineView: NSOutlineView!
     
     var dragType = [NSPasteboard.PasteboardType]()
@@ -33,14 +32,7 @@ class MainWindowController: NSWindowController , NSOutlineViewDataSource {
         dragType = [NSPasteboard.PasteboardType(rawValue: "DragType")]
         myOutlineView.registerForDraggedTypes(dragType)
     }
-    
-    @IBAction func foo(_ sender: Any) {
-        let theArrObjFromArrCtrl = arrayController.arrangedObjects as? [Group]
-        for theGrp in theArrObjFromArrCtrl! {
-            print("\(String(describing: theGrp.name))")
-        }
-    }
-    
+        
     // This method gets called by the framework but
     // the values from bindings are used instead
     func outlineView(_ outlineView: NSOutlineView, objectValueFor tableColumn: NSTableColumn?, byItem item: Any?) -> Any? {
