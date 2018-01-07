@@ -9,12 +9,11 @@
 import Foundation
 import Cocoa
 
-
-
 extension MainWindowController: NSOutlineViewDataSource {
-
+    
     func outlineView(_ outlineView: NSOutlineView, draggingSession session: NSDraggingSession, endedAt screenPoint: NSPoint, operation: NSDragOperation) {
         debugPrint("Drag session ended")
+        anTreeController.rearrangeObjects()
         self.draggedNode = nil
     }
     
@@ -32,23 +31,36 @@ extension MainWindowController: NSOutlineViewDataSource {
     
     func outlineView(_ outlineView: NSOutlineView, acceptDrop info: NSDraggingInfo, item: Any?, childIndex index: Int) -> Bool {
         let item1 = item as? NSTreeNode
-        let item2 = item1?.representedObject as? NSManagedObject
-        
+        var item2 = item1?.representedObject as? NSManagedObject
+        var result = item2 is EntityAffectation
+        print("2 : ", result)
+        if result == false {
+            item2 = item2?.value(forKey: "affectation") as? NSManagedObject
+            result = item2 is EntityAffectation
+            print("2 : ", result)
+
+        }
+
         let draggedNode1 = draggedNode as? NSTreeNode
         let draggedTreeNode = draggedNode1?.representedObject as! NSManagedObject
+        result = draggedTreeNode is EntityCategory
+        print("3 : ", result)
+        if result == false {
+            return false
+        }
         
-        draggedTreeNode.setValue(item2, forKey: "parent")
+        draggedTreeNode.setValue(item2, forKey: "affectation")
         return true
     }
     
     func outlineView(_ outlineView: NSOutlineView, validateDrop info: NSDraggingInfo, proposedItem item: Any?, proposedChildIndex index: Int) -> NSDragOperation {
         
-        let retVal = NSDragOperation()
+//        let retVal = NSDragOperation()
         
         // drags to the root are always acceptable
         let item1 = item as? NSTreeNode
         if item1?.representedObject == nil {
-            return .generic
+            return .move
         }
         // Verify that we are not dragging a parent to one of it's ancestors
         // causes a parent loop where a group of nodes point to each other
@@ -58,31 +70,25 @@ extension MainWindowController: NSOutlineViewDataSource {
         let dragged = draggedNode1?.representedObject as! NSManagedObject
         
         let newP = item1?.representedObject as! NSManagedObject
+        if newP is EntityAffectation {
+            return .move
+        }
         if category(dragged, isSubCategoryOf: newP) {
             
-            return retVal
+            return .move
         }
-        return .generic
+        return .move
     }
 
-    
     func category(_ cat: NSManagedObject, isSubCategoryOf possibleSub: NSManagedObject) -> Bool {
         // Depends on your interpretation of subCategory ....
         if cat == possibleSub {
             return true
         }
-        var possSubParent = possibleSub.value(forKey: "parent") as? NSManagedObject
-        if possSubParent == nil {
-            return false
-        }
-        while possSubParent != nil {
-            if possSubParent == cat {
-                return true
-            }
-            // move up the tree
-            possSubParent = possSubParent?.value(forKey: "parent") as? NSManagedObject
-        }
-        return false
+        let possSubParent = possibleSub.value(forKey: "affectation") as? NSManagedObject
+        let result = possSubParent is EntityAffectation
+        print("1 : ", result)
+        return result
     }
     
     

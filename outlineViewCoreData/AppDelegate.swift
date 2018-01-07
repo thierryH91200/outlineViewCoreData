@@ -13,6 +13,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
     
     var mainWindowController: MainWindowController?
     
+    // find ~ -name app_db_file_name.sqlite
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
         initializeLibraryAndShowMainWindow()
