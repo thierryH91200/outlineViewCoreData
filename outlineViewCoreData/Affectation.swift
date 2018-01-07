@@ -153,7 +153,8 @@ class Affectation {
                         
                         let entityAffectation = EntityAffectation(context: mainObjectContext)
                         entityAffectation.name = key["affectation"]
-                        
+                        entityAffectation.color = NSColor.blue
+
                         let entityCategory = EntityCategory(context: mainObjectContext)
                         entityCategory.name = key["categorie"]
                         entityCategory.objectif = 100

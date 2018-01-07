@@ -12,8 +12,8 @@
 		030E92231FFE08DC002ECDA5 /* categorie.csv in Resources */ = {isa = PBXBuildFile; fileRef = 030E921E1FFE0403002ECDA5 /* categorie.csv */; };
 		031E87B01FFE7BF0004E6B9F /* EntityCategory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031E87AC1FFE7BF0004E6B9F /* EntityCategory+CoreDataClass.swift */; };
 		031E87B11FFE7BF0004E6B9F /* EntityCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031E87AD1FFE7BF0004E6B9F /* EntityCategory+CoreDataProperties.swift */; };
-		031E87B61FFEA64E004E6B9F /* EntityAffectation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031E87B41FFEA64E004E6B9F /* EntityAffectation+CoreDataClass.swift */; };
-		031E87B71FFEA64E004E6B9F /* EntityAffectation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031E87B51FFEA64E004E6B9F /* EntityAffectation+CoreDataProperties.swift */; };
+		0363786E200214C600B47CF7 /* EntityAffectation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0363786C200214C600B47CF7 /* EntityAffectation+CoreDataClass.swift */; };
+		0363786F200214C600B47CF7 /* EntityAffectation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0363786D200214C600B47CF7 /* EntityAffectation+CoreDataProperties.swift */; };
 		038D4DF91FF67E4600C86942 /* MainWindowControllerDragDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038D4DF81FF67E4600C86942 /* MainWindowControllerDragDrop.swift */; };
 		038F96ED1FE7BB7E00606CB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038F96EC1FE7BB7E00606CB9 /* AppDelegate.swift */; };
 		038F96F01FE7BB7E00606CB9 /* outlineViewCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 038F96EE1FE7BB7E00606CB9 /* outlineViewCoreData.xcdatamodeld */; };
@@ -48,8 +48,8 @@
 		030E92211FFE061B002ECDA5 /* CSwiftV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSwiftV.swift; sourceTree = "<group>"; };
 		031E87AC1FFE7BF0004E6B9F /* EntityCategory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EntityCategory+CoreDataClass.swift"; sourceTree = "<group>"; };
 		031E87AD1FFE7BF0004E6B9F /* EntityCategory+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EntityCategory+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		031E87B41FFEA64E004E6B9F /* EntityAffectation+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EntityAffectation+CoreDataClass.swift"; sourceTree = "<group>"; };
-		031E87B51FFEA64E004E6B9F /* EntityAffectation+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EntityAffectation+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0363786C200214C600B47CF7 /* EntityAffectation+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EntityAffectation+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0363786D200214C600B47CF7 /* EntityAffectation+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EntityAffectation+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		038D4DF81FF67E4600C86942 /* MainWindowControllerDragDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowControllerDragDrop.swift; sourceTree = "<group>"; };
 		038F96E91FE7BB7E00606CB9 /* THOutlineViewCoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = THOutlineViewCoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		038F96EC1FE7BB7E00606CB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -96,8 +96,8 @@
 		0320F64D2000EDBE00C6C078 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				031E87B41FFEA64E004E6B9F /* EntityAffectation+CoreDataClass.swift */,
-				031E87B51FFEA64E004E6B9F /* EntityAffectation+CoreDataProperties.swift */,
+				0363786C200214C600B47CF7 /* EntityAffectation+CoreDataClass.swift */,
+				0363786D200214C600B47CF7 /* EntityAffectation+CoreDataProperties.swift */,
 				031E87AC1FFE7BF0004E6B9F /* EntityCategory+CoreDataClass.swift */,
 				031E87AD1FFE7BF0004E6B9F /* EntityCategory+CoreDataProperties.swift */,
 			);
@@ -306,11 +306,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				038F96F01FE7BB7E00606CB9 /* outlineViewCoreData.xcdatamodeld in Sources */,
-				031E87B71FFEA64E004E6B9F /* EntityAffectation+CoreDataProperties.swift in Sources */,
+				0363786F200214C600B47CF7 /* EntityAffectation+CoreDataProperties.swift in Sources */,
 				031E87B01FFE7BF0004E6B9F /* EntityCategory+CoreDataClass.swift in Sources */,
 				038F96ED1FE7BB7E00606CB9 /* AppDelegate.swift in Sources */,
 				038F971B1FE7C03D00606CB9 /* MainWindowController.swift in Sources */,
-				031E87B61FFEA64E004E6B9F /* EntityAffectation+CoreDataClass.swift in Sources */,
+				0363786E200214C600B47CF7 /* EntityAffectation+CoreDataClass.swift in Sources */,
 				031E87B11FFE7BF0004E6B9F /* EntityCategory+CoreDataProperties.swift in Sources */,
 				038D4DF91FF67E4600C86942 /* MainWindowControllerDragDrop.swift in Sources */,
 				030E92221FFE061B002ECDA5 /* CSwiftV.swift in Sources */,

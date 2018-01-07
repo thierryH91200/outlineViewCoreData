@@ -9,125 +9,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "outlineViewCoreData/MainWindowControllerDragDrop.swift"
-            timestampString = "536965589.739518"
+            filePath = "outlineViewCoreData/MainWindowController.swift"
+            timestampString = "537010501.050635"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
-            landmarkName = "outlineView(_:validateDrop:proposedItem:proposedChildIndex:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "outlineViewCoreData/MainWindowControllerDragDrop.swift"
-            timestampString = "536965589.739755"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "category(_:isSubCategoryOf:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "outlineViewCoreData/MainWindowControllerDragDrop.swift"
-            timestampString = "536965589.739822"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "outlineView(_:acceptDrop:item:childIndex:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "outlineViewCoreData.MainWindowController.outlineView(__ObjC.NSOutlineView, acceptDrop: __ObjC.NSDraggingInfo, item: Swift.Optional&lt;Any&gt;, childIndex: Swift.Int) -&gt; Swift.Bool"
-                  moduleName = "outlineViewCoreData"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/thierryh24/Documents/Developpements/outlineViewCoreData/outlineViewCoreData/MainWindowControllerDragDrop.swift"
-                  timestampString = "536935254.1828181"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "1183">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "outlineViewCoreData.MainWindowController.outlineView(__ObjC.NSOutlineView, acceptDrop: __ObjC.NSDraggingInfo, item: Swift.Optional&lt;Any&gt;, childIndex: Swift.Int) -&gt; Swift.Bool"
-                  moduleName = "outlineViewCoreData"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/thierryh24/Documents/Developpements/outlineViewCoreData/outlineViewCoreData/MainWindowControllerDragDrop.swift"
-                  timestampString = "536935254.185038"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "2161">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "outlineViewCoreData/MainWindowControllerDragDrop.swift"
-            timestampString = "536965589.739879"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "outlineView(_:writeItems:to:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "outlineViewCoreData/MainWindowControllerDragDrop.swift"
-            timestampString = "536965589.7399271"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "outlineView(_:validateDrop:proposedItem:proposedChildIndex:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "outlineViewCoreData/MainWindowControllerDragDrop.swift"
-            timestampString = "536965589.73997"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "outlineView(_:acceptDrop:item:childIndex:)"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "changeCouleur(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

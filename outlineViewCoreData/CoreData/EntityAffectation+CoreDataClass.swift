@@ -1,8 +1,8 @@
 //
 //  EntityAffectation+CoreDataClass.swift
-//  outlineViewCoreData
+//  THOutlineViewCoreData
 //
-//  Created by thierryH24 on 04/01/2018.
+//  Created by thierryH24 on 07/01/2018.
 //  Copyright © 2018 thierryH24. All rights reserved.
 //
 //

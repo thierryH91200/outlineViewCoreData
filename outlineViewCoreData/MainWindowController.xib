@@ -5,7 +5,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController" customModule="outlineViewCoreData" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController" customModule="THOutlineViewCoreData" customModuleProvider="target">
             <connections>
                 <outlet property="anOutlineView" destination="EzU-Oc-Ann" id="2sS-WH-vn0"/>
                 <outlet property="anTreeController" destination="wjt-4d-L1H" id="Kcv-fx-dXn"/>
@@ -90,12 +90,12 @@
                                             <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="name"/>
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <prototypeCellViews>
-                                                <tableCellView identifier="headerCell" id="9nR-xS-3S7">
+                                                <tableCellView identifier="headerCell" id="9nR-xS-3S7" customClass="KSHeaderCellView2" customModule="THOutlineViewCoreData" customModuleProvider="target">
                                                     <rect key="frame" x="1" y="1" width="390" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Ku3-tS-UVN">
-                                                            <rect key="frame" x="0.0" y="-2" width="390" height="22"/>
+                                                            <rect key="frame" x="0.0" y="-2" width="306" height="22"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" title="Table View Cell" id="3Zk-DP-UGG">
                                                                 <font key="font" metaFont="system" size="18"/>
                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -103,19 +103,33 @@
                                                             </textFieldCell>
                                                             <connections>
                                                                 <binding destination="9nR-xS-3S7" name="value" keyPath="objectValue.name" id="2Fm-xZ-Jlv"/>
+                                                                <binding destination="9nR-xS-3S7" name="textColor" keyPath="objectValue.color" id="0p9-jW-0qe"/>
                                                             </connections>
                                                         </textField>
+                                                        <colorWell translatesAutoresizingMaskIntoConstraints="NO" id="wQs-Z7-7n4">
+                                                            <rect key="frame" x="343" y="-3" width="44" height="23"/>
+                                                            <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <connections>
+                                                                <action selector="changeCouleur:" target="-2" id="y04-4b-q4F"/>
+                                                                <binding destination="9nR-xS-3S7" name="value" keyPath="objectValue.color" id="VdJ-l9-Lhl"/>
+                                                            </connections>
+                                                        </colorWell>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="Ku3-tS-UVN" firstAttribute="centerX" secondItem="9nR-xS-3S7" secondAttribute="centerX" id="C2t-di-a5K"/>
+                                                        <constraint firstItem="wQs-Z7-7n4" firstAttribute="top" secondItem="9nR-xS-3S7" secondAttribute="top" constant="-3" id="9oI-UG-XCs"/>
+                                                        <constraint firstItem="Ku3-tS-UVN" firstAttribute="centerX" secondItem="9nR-xS-3S7" secondAttribute="centerX" constant="-42" id="C2t-di-a5K"/>
+                                                        <constraint firstItem="wQs-Z7-7n4" firstAttribute="centerY" secondItem="Ku3-tS-UVN" secondAttribute="centerY" id="EC0-z4-3b2"/>
+                                                        <constraint firstAttribute="trailing" secondItem="wQs-Z7-7n4" secondAttribute="trailing" constant="3" id="JRP-H6-YRd"/>
                                                         <constraint firstItem="Ku3-tS-UVN" firstAttribute="leading" secondItem="9nR-xS-3S7" secondAttribute="leading" constant="2" id="cyA-86-Wsp"/>
                                                         <constraint firstItem="Ku3-tS-UVN" firstAttribute="centerY" secondItem="9nR-xS-3S7" secondAttribute="centerY" id="i81-3O-cVI"/>
+                                                        <constraint firstItem="wQs-Z7-7n4" firstAttribute="leading" secondItem="Ku3-tS-UVN" secondAttribute="trailing" constant="39" id="zSG-U7-sA4"/>
                                                     </constraints>
                                                     <connections>
+                                                        <outlet property="colorWell" destination="wQs-Z7-7n4" id="QMH-Wu-s4b"/>
                                                         <outlet property="textField" destination="Ku3-tS-UVN" id="pk6-0H-btu"/>
                                                     </connections>
                                                 </tableCellView>
-                                                <tableCellView identifier="dataCell" id="zpZ-QB-35y" customClass="KSTableCellView2" customModule="outlineViewCoreData" customModuleProvider="target">
+                                                <tableCellView identifier="dataCell" id="zpZ-QB-35y" customClass="KSTableCellView2" customModule="THOutlineViewCoreData" customModuleProvider="target">
                                                     <rect key="frame" x="1" y="21" width="390" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
@@ -133,7 +147,7 @@
                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ccM-43-rIp">
                                                             <rect key="frame" x="204" y="0.0" width="168" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" alignment="right" title="Table View Cell" id="atG-oH-MKl">
+                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" alignment="center" title="Table View Cell" id="atG-oH-MKl">
                                                                 <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="currency" lenient="YES" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" minimumFractionDigits="2" maximumFractionDigits="2" id="S7v-LA-Tal"/>
                                                                 <font key="font" metaFont="system"/>
                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>

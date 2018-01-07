@@ -18,7 +18,7 @@ class MainWindowController: NSWindowController, NSOutlineViewDelegate {
     
     @objc  var managedObjectContext: NSManagedObjectContext = (NSApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-     @objc let dataSort = NSSortDescriptor(key: "name", ascending: false)
+    @objc let dataSort = NSSortDescriptor(key: "name", ascending: false)
     
     override func windowDidLoad() {
         super.windowDidLoad()
@@ -40,7 +40,7 @@ class MainWindowController: NSWindowController, NSOutlineViewDelegate {
         
         let descriptorName = NSSortDescriptor(key: "name", ascending: true, selector: #selector(NSString.caseInsensitiveCompare(_:)))
         anOutlineView.tableColumns[0].sortDescriptorPrototype = descriptorName
-
+        
         DispatchQueue.main.async(execute: {() -> Void in
             self.anOutlineView.expandItem(nil, expandChildren: true)
         })
@@ -84,6 +84,44 @@ class MainWindowController: NSWindowController, NSOutlineViewDelegate {
         anOutlineView.expandItem(nil, expandChildren: true)
         anOutlineView.reloadData()
     }
+    
+    @IBAction func changeCouleur(_ sender : NSColorWell)
+    {
+        let row = anOutlineView.row(for: sender as NSView)
+        if row == -1 { return }
+        
+        let color = sender.color
+        
+        let item = anOutlineView.item(atRow: row) as? NSTreeNode
+        let item1 = item?.representedObject as? NSManagedObject
+        let result = item1 is EntityAffectation
+        if result == true {
+            let item2 = item1 as! EntityAffectation
+            
+            item2.color = color
+            
+            let select1 : IndexSet = [row]
+            anOutlineView.selectRowIndexes(select1, byExtendingSelection: false)
+        }
+    }
+    
+}
+
+class KSHeaderCellView2 : NSTableCellView {
+    
+    @IBOutlet weak var colorWell:NSColorWell!
+    @IBOutlet weak var objectif:NSTextField!
+    
+    var fillColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
+    
+    //    override func draw(_ dirtyRect: NSRect) {
+    //        super.draw(dirtyRect)
+    //
+    //        let bPath = NSBezierPath(rect: dirtyRect)
+    //
+    //        fillColor.set()
+    //        bPath.fill()
+    //    }
 }
 
 

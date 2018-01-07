@@ -12,12 +12,14 @@ import Cocoa
 extension MainWindowController: NSOutlineViewDataSource {
     
     func outlineView(_ outlineView: NSOutlineView, draggingSession session: NSDraggingSession, endedAt screenPoint: NSPoint, operation: NSDragOperation) {
+        
+        self.draggedNode = nil
         debugPrint("Drag session ended")
         anTreeController.rearrangeObjects()
-        self.draggedNode = nil
     }
     
     func outlineView(_ outlineView: NSOutlineView, draggingSession session: NSDraggingSession, willBeginAt screenPoint: NSPoint, forItems draggedItems: [Any]) {
+        
         draggedNode = draggedItems[0] as AnyObject?
         session.draggingPasteboard.setData(Data(), forType: NSPasteboard.PasteboardType(rawValue: "DragType"))
         debugPrint("Drag session begin")
@@ -38,7 +40,6 @@ extension MainWindowController: NSOutlineViewDataSource {
             item2 = item2?.value(forKey: "affectation") as? NSManagedObject
             result = item2 is EntityAffectation
             print("2 : ", result)
-
         }
 
         let draggedNode1 = draggedNode as? NSTreeNode
@@ -54,7 +55,7 @@ extension MainWindowController: NSOutlineViewDataSource {
     }
     
     func outlineView(_ outlineView: NSOutlineView, validateDrop info: NSDraggingInfo, proposedItem item: Any?, proposedChildIndex index: Int) -> NSDragOperation {
-                
+        
         // drags to the root are always acceptable
         let item1 = item as? NSTreeNode
         if item1?.representedObject == nil {
