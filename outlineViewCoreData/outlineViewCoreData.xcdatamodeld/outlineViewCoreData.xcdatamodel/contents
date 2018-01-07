@@ -3,6 +3,7 @@
     <entity name="EntityAffectation" representedClassName="EntityAffectation" syncable="YES">
         <attribute name="color" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" defaultValueString="aff" syncable="YES"/>
+        <attribute name="total" optional="YES" transient="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="category" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EntityCategory" inverseName="affectation" inverseEntity="EntityCategory" syncable="YES"/>
     </entity>
     <entity name="EntityCategory" representedClassName="EntityCategory" syncable="YES">
@@ -12,7 +13,7 @@
         <relationship name="affectation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityAffectation" inverseName="category" inverseEntity="EntityAffectation" syncable="YES"/>
     </entity>
     <elements>
-        <element name="EntityAffectation" positionX="286" positionY="-36" width="128" height="90"/>
+        <element name="EntityAffectation" positionX="286" positionY="-36" width="128" height="105"/>
         <element name="EntityCategory" positionX="547" positionY="-36" width="128" height="105"/>
     </elements>
 </model>

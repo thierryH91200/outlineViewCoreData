@@ -55,3 +55,22 @@ extension EntityAffectation {
     }
     
 }
+
+extension EntityAffectation {
+    @objc var total : Double {
+        // Create and cache the section total on demand.
+        
+        self.willAccessValue(forKey: "total")
+        var _total = self.primitiveValue(forKey: "total") as! Double
+        self.didAccessValue(forKey: "total")
+        
+        _total = 0.0
+        let sousTotals = category?.allObjects as! [EntityCategory]
+        for soustotal in sousTotals {
+            _total += soustotal.objectif
+        }
+        self.setPrimitiveValue(_total, forKey: "total")
+        return _total
+    }
+}
+

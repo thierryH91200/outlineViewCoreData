@@ -110,9 +110,9 @@ class MainWindowController: NSWindowController, NSOutlineViewDelegate {
 class KSHeaderCellView2 : NSTableCellView {
     
     @IBOutlet weak var colorWell:NSColorWell!
-    @IBOutlet weak var objectif:NSTextField!
+    @IBOutlet weak var total:NSTextField!
     
-    var fillColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
+//    var fillColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
     
     //    override func draw(_ dirtyRect: NSRect) {
     //        super.draw(dirtyRect)
