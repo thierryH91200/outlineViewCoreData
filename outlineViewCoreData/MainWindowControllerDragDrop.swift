@@ -54,9 +54,7 @@ extension MainWindowController: NSOutlineViewDataSource {
     }
     
     func outlineView(_ outlineView: NSOutlineView, validateDrop info: NSDraggingInfo, proposedItem item: Any?, proposedChildIndex index: Int) -> NSDragOperation {
-        
-//        let retVal = NSDragOperation()
-        
+                
         // drags to the root are always acceptable
         let item1 = item as? NSTreeNode
         if item1?.representedObject == nil {
@@ -74,7 +72,6 @@ extension MainWindowController: NSOutlineViewDataSource {
             return .move
         }
         if category(dragged, isSubCategoryOf: newP) {
-            
             return .move
         }
         return .move
