@@ -16,9 +16,9 @@ class MainWindowController: NSWindowController, NSOutlineViewDelegate {
     var dragType = [NSPasteboard.PasteboardType]()
     var draggedNode:Any? = nil
     
-    @objc  var managedObjectContext: NSManagedObjectContext = (NSApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    @objc var managedObjectContext: NSManagedObjectContext = (NSApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    @objc let dataSort = NSSortDescriptor(key: "name", ascending: false)
+    @objc let dataSort = [NSSortDescriptor(key: "name", ascending: false)]
     
     override func windowDidLoad() {
         super.windowDidLoad()
@@ -105,7 +105,24 @@ class MainWindowController: NSWindowController, NSOutlineViewDelegate {
         }
     }
     
+    @IBAction func save(_ sender: Any) {
+        
+        do {
+            try managedObjectContext.save()
+        } catch { }
+        anTreeController.rearrangeObjects()
+
+    }
 }
+
+extension MainWindowController: NSTextFieldDelegate {
+    
+    override func controlTextDidEndEditing(_ obj: Notification) {
+        
+        anTreeController.rearrangeObjects()
+    }
+}
+
 
 class KSHeaderCellView2 : NSTableCellView {
     

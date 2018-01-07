@@ -20,6 +20,8 @@ extension EntityAffectation {
     @NSManaged public var name: String?
     @NSManaged public var color: NSObject?
     @NSManaged public var category: NSSet?
+//    @NSManaged public var total : Double
+
 
 }
 

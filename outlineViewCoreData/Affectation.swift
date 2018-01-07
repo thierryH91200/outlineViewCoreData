@@ -171,6 +171,9 @@ class Affectation {
                         entities[0].category?.adding(entityCategory)
                     }
                 }
+                do {
+                try mainObjectContext.save()
+                } catch { }
             }
             do {
                 let fetchRequest = NSFetchRequest<EntityAffectation>(entityName: "EntityAffectation")

@@ -102,8 +102,9 @@
                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                             <connections>
-                                                                <binding destination="9nR-xS-3S7" name="value" keyPath="objectValue.name" id="2Fm-xZ-Jlv"/>
                                                                 <binding destination="9nR-xS-3S7" name="textColor" keyPath="objectValue.color" id="0p9-jW-0qe"/>
+                                                                <binding destination="9nR-xS-3S7" name="value" keyPath="objectValue.name" id="2Fm-xZ-Jlv"/>
+                                                                <outlet property="delegate" destination="-2" id="x3M-LB-A3o"/>
                                                             </connections>
                                                         </textField>
                                                         <colorWell translatesAutoresizingMaskIntoConstraints="NO" id="wQs-Z7-7n4">
@@ -157,6 +158,7 @@
                                                             </textFieldCell>
                                                             <connections>
                                                                 <binding destination="zpZ-QB-35y" name="value" keyPath="objectValue.name" id="t9f-h8-3Gw"/>
+                                                                <outlet property="delegate" destination="-2" id="7Z3-5G-kil"/>
                                                             </connections>
                                                         </textField>
                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ccM-43-rIp">
@@ -170,6 +172,7 @@
                                                             </textFieldCell>
                                                             <connections>
                                                                 <binding destination="zpZ-QB-35y" name="value" keyPath="objectValue.objectif" id="7Mg-ZM-fW1"/>
+                                                                <outlet property="delegate" destination="-2" id="SlU-CB-faa"/>
                                                             </connections>
                                                         </textField>
                                                     </subviews>
@@ -195,7 +198,7 @@
                                     </tableColumns>
                                     <connections>
                                         <outlet property="dataSource" destination="-2" id="amh-fL-zfd"/>
-                                        <outlet property="delegate" destination="wjt-4d-L1H" id="YjC-hl-3bG"/>
+                                        <outlet property="delegate" destination="-2" id="SZa-8o-zO2"/>
                                     </connections>
                                 </outlineView>
                             </subviews>
@@ -214,8 +217,19 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </tableHeaderView>
                     </scrollView>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XIl-8K-rAw">
+                        <rect key="frame" x="313" y="1" width="70" height="32"/>
+                        <buttonCell key="cell" type="push" title="Save" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="KAI-dh-i1p">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="save:" target="-2" id="jqe-fb-rsS"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="XIl-8K-rAw" firstAttribute="top" secondItem="7Ba-Oc-Cg7" secondAttribute="bottom" constant="84" id="559-0q-kj0"/>
                     <constraint firstItem="y9T-xg-x7g" firstAttribute="top" secondItem="1Ds-JH-EYH" secondAttribute="bottom" constant="12" id="6A2-vX-HA5"/>
                     <constraint firstItem="306-5W-ahp" firstAttribute="leading" secondItem="1Ds-JH-EYH" secondAttribute="trailing" constant="49" id="JYG-Dg-GGG"/>
                     <constraint firstAttribute="trailing" secondItem="7Ba-Oc-Cg7" secondAttribute="trailing" constant="100" id="L9g-jL-5b4"/>
@@ -225,6 +239,7 @@
                     <constraint firstItem="306-5W-ahp" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="173" id="UaJ-XM-BFC"/>
                     <constraint firstItem="8kX-JV-kz0" firstAttribute="top" secondItem="7Ba-Oc-Cg7" secondAttribute="bottom" constant="39" id="eDd-As-sGa"/>
                     <constraint firstItem="8kX-JV-kz0" firstAttribute="leading" secondItem="306-5W-ahp" secondAttribute="trailing" constant="138" id="eml-XR-ggt"/>
+                    <constraint firstItem="XIl-8K-rAw" firstAttribute="leading" secondItem="y9T-xg-x7g" secondAttribute="trailing" constant="195" id="hIz-d3-zHr"/>
                     <constraint firstItem="7Ba-Oc-Cg7" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" id="qXP-Jx-BuO"/>
                     <constraint firstItem="y9T-xg-x7g" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="37" id="tA1-is-oeR"/>
                     <constraint firstItem="7Ba-Oc-Cg7" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" id="yaP-ti-lsd"/>

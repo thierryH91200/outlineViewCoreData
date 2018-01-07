@@ -6,16 +6,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "outlineViewCoreData/MainWindowController.swift"
-            timestampString = "537015196.179855"
+            filePath = "outlineViewCoreData/Affectation.swift"
+            timestampString = "537024074.009867"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
-            landmarkName = "changeCouleur(_:)"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
+            landmarkName = "defaultEntities()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,14 +25,14 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "outlineViewCoreData/CoreData/EntityAffectation+CoreDataProperties.swift"
-            timestampString = "537015196.180539"
+            filePath = "outlineViewCoreData/MainWindowController.swift"
+            timestampString = "537026188.091656"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "total"
-            landmarkType = "24">
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "windowDidLoad()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

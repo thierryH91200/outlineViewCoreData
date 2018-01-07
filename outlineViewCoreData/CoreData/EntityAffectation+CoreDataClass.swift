@@ -12,11 +12,10 @@ import CoreData
 
 @objc(EntityAffectation)
 public class EntityAffectation: NSManagedObject {
-//    var total = 0.0
     
-    override public class func keyPathsForValuesAffectingValue( forKey key: String) -> Set<String> {
-        var keyPaths = super.keyPathsForValuesAffectingValue(forKey: key)
-        return keyPaths as Set<String>
-    }
+//    override public class func keyPathsForValuesAffectingValue( forKey key: String) -> Set<String> {
+//        let keyPaths = super.keyPathsForValuesAffectingValue(forKey: key)
+//        return keyPaths as Set<String>
+//    }
 
 }
