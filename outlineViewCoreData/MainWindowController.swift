@@ -38,6 +38,9 @@ class MainWindowController: NSWindowController, NSOutlineViewDelegate {
         
         anOutlineView.allowsEmptySelection = false
         
+        let descriptorName = NSSortDescriptor(key: "name", ascending: true, selector: #selector(NSString.caseInsensitiveCompare(_:)))
+        anOutlineView.tableColumns[0].sortDescriptorPrototype = descriptorName
+
         DispatchQueue.main.async(execute: {() -> Void in
             self.anOutlineView.expandItem(nil, expandChildren: true)
         })
@@ -53,7 +56,7 @@ class MainWindowController: NSWindowController, NSOutlineViewDelegate {
         
         if item is NSTreeNode
         {
-            result =  (draggedNode1?.representedObject is EntityAffectation)
+            result =  draggedNode1?.representedObject is EntityAffectation
         } else
         {
             result =  draggedNode1?.representedObject  is EntityCategory
