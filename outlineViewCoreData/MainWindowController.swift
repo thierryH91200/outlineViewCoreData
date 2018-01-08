@@ -18,7 +18,9 @@ class MainWindowController: NSWindowController, NSOutlineViewDelegate {
     
     @objc var managedObjectContext: NSManagedObjectContext = (NSApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    @objc let dataSort = [NSSortDescriptor(key: "name", ascending: false)]
+    @objc var dataSort = [NSSortDescriptor(key: "name", ascending: false)]
+    @objc dynamic var customSortDescriptors = [NSSortDescriptor(key: "name", ascending: true, selector: #selector(NSString.localizedStandardCompare(_:)))];
+
     
     override func windowDidLoad() {
         super.windowDidLoad()
@@ -47,6 +49,8 @@ class MainWindowController: NSWindowController, NSOutlineViewDelegate {
         
         dragType = [NSPasteboard.PasteboardType(rawValue: "DragType")]
         anOutlineView.registerForDraggedTypes(dragType)
+        
+        anTreeController.sortDescriptors = customSortDescriptors
     }
     
     func isHeader(item: Any) -> Bool {
@@ -104,6 +108,41 @@ class MainWindowController: NSWindowController, NSOutlineViewDelegate {
             anOutlineView.selectRowIndexes(select1, byExtendingSelection: false)
         }
     }
+    @IBAction func add(_ sender: Any) {
+        let index = anOutlineView.selectedRowIndexes
+        print(index)
+    }
+    
+    @IBAction func addChild(_ sender: Any) {
+        
+        let index = anOutlineView.selectedRowIndexes
+        print(index)
+
+    }
+    
+    @IBAction func remove(_ sender: Any) {
+        
+        let selected = anOutlineView.selectedRowIndexes.map { Int($0) }
+        let item = anOutlineView.item(atRow: selected[0])
+        print(item)
+        
+        let item1 = item as? NSTreeNode
+        let item2 = item1?.representedObject as? NSManagedObject
+        let result = item2 is EntityAffectation
+        print(result)
+        if result == true {
+            managedObjectContext.delete(item2!)
+        } else {
+            let entity = item2 as! EntityCategory
+            let aff = entity.affectation
+            aff?.removeFromCategory(entity)
+            managedObjectContext.delete(item2!)
+        }
+        anTreeController.rearrangeObjects()
+
+        
+        
+    }
     
     @IBAction func save(_ sender: Any) {
         
@@ -122,7 +161,6 @@ extension MainWindowController: NSTextFieldDelegate {
         anTreeController.rearrangeObjects()
     }
 }
-
 
 class KSHeaderCellView2 : NSTableCellView {
     

@@ -21,8 +21,6 @@ extension EntityAffectation {
     @NSManaged public var color: NSObject?
     @NSManaged public var category: NSSet?
 //    @NSManaged public var total : Double
-
-
 }
 
 // MARK: Generated accessors for category

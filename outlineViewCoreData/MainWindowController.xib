@@ -30,7 +30,7 @@
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
-                            <action selector="add:" target="wjt-4d-L1H" id="RGq-oV-Ex0"/>
+                            <action selector="add:" target="-2" id="W5b-Qy-sAv"/>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="y9T-xg-x7g">
@@ -40,7 +40,7 @@
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
-                            <action selector="addChild:" target="wjt-4d-L1H" id="fC2-Jx-DMp"/>
+                            <action selector="addChild:" target="-2" id="yNB-cs-LVz"/>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="306-5W-ahp">
@@ -50,7 +50,7 @@
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
-                            <action selector="remove:" target="wjt-4d-L1H" id="piu-vj-0cV"/>
+                            <action selector="remove:" target="-2" id="cGW-Kt-27q"/>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8kX-JV-kz0">
@@ -87,7 +87,6 @@
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
-                                            <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="name"/>
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <prototypeCellViews>
                                                 <tableCellView identifier="headerCell" id="9nR-xS-3S7" customClass="KSHeaderCellView2" customModule="THOutlineViewCoreData" customModuleProvider="target">
@@ -188,7 +187,7 @@
                                                 </tableCellView>
                                             </prototypeCellViews>
                                             <connections>
-                                                <binding destination="wjt-4d-L1H" name="value" keyPath="arrangedObjects" id="5FF-uc-nN0">
+                                                <binding destination="wjt-4d-L1H" name="value" keyPath="arrangedObjects.name" id="RrN-xV-NaB">
                                                     <dictionary key="options">
                                                         <bool key="NSConditionallySetsEnabled" value="YES"/>
                                                     </dictionary>
