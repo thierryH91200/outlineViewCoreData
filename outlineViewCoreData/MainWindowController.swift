@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class MainWindowController: NSWindowController, NSOutlineViewDelegate {
+class MainWindowController: NSWindowController, NSOutlineViewDelegate  {
     
     @IBOutlet weak var anOutlineView: NSOutlineView!
     @IBOutlet var anTreeController: NSTreeController!
@@ -21,7 +21,9 @@ class MainWindowController: NSWindowController, NSOutlineViewDelegate {
     @objc var dataSort = [NSSortDescriptor(key: "name", ascending: false)]
     @objc dynamic var customSortDescriptors = [NSSortDescriptor(key: "name", ascending: true, selector: #selector(NSString.localizedStandardCompare(_:)))];
 
-    
+    var addModalWindowController:AddModalWindowController!
+    var addChildModalWindowController:AddChildModalWindowController!
+
     override func windowDidLoad() {
         super.windowDidLoad()
         
@@ -108,15 +110,52 @@ class MainWindowController: NSWindowController, NSOutlineViewDelegate {
             anOutlineView.selectRowIndexes(select1, byExtendingSelection: false)
         }
     }
+    
     @IBAction func add(_ sender: Any) {
         let index = anOutlineView.selectedRowIndexes
         print(index)
+        
+        self.addModalWindowController = AddModalWindowController(windowNibName: NSNib.Name(rawValue: "AddModalWindowController"))
+        let windowAdd = addModalWindowController.window!
+        let windowApp = self.window
+        windowApp?.beginSheet(windowAdd, completionHandler: {(_ returnCode: NSApplication.ModalResponse) -> Void in
+
+            print("Sheet closed")
+            switch returnCode {
+            case .OK:
+                print("Done button tapped in Custom Sheet")
+            case .cancel:
+                print("Cancel button tapped in Custom Sheet")
+            default:
+                break
+            }
+//            addModalWindowController = nil
+        })
     }
     
+
     @IBAction func addChild(_ sender: Any) {
         
         let index = anOutlineView.selectedRowIndexes
         print(index)
+        
+        self.addChildModalWindowController = AddChildModalWindowController(windowNibName: NSNib.Name(rawValue: "AddModalWindowController"))
+        let windowAdd = addModalWindowController.window!
+        let windowApp = self.window
+        windowApp?.beginSheet(windowAdd, completionHandler: {(_ returnCode: NSApplication.ModalResponse) -> Void in
+            
+            print("Sheet closed")
+            switch returnCode {
+            case .OK:
+                print("Done button tapped in Custom Sheet")
+            case .cancel:
+                print("Cancel button tapped in Custom Sheet")
+            default:
+                break
+            }
+            //            addModalWindowController = nil
+        })
+
 
     }
     
@@ -124,7 +163,6 @@ class MainWindowController: NSWindowController, NSOutlineViewDelegate {
         
         let selected = anOutlineView.selectedRowIndexes.map { Int($0) }
         let item = anOutlineView.item(atRow: selected[0])
-        print(item)
         
         let item1 = item as? NSTreeNode
         let item2 = item1?.representedObject as? NSManagedObject

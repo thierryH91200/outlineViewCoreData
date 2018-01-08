@@ -9,11 +9,16 @@
             <connections>
                 <outlet property="anOutlineView" destination="EzU-Oc-Ann" id="2sS-WH-vn0"/>
                 <outlet property="anTreeController" destination="wjt-4d-L1H" id="Kcv-fx-dXn"/>
-                <outlet property="window" destination="F0z-JX-Cv5" id="X22-AO-qar"/>
+                <outlet property="window" destination="F0z-JX-Cv5" id="L4D-0x-bPP"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <treeController mode="entity" entityName="EntityAffectation" automaticallyPreparesContent="YES" childrenKeyPath="children" countKeyPath="count" leafKeyPath="isLeaf" id="wjt-4d-L1H">
+            <connections>
+                <binding destination="-2" name="managedObjectContext" keyPath="self.managedObjectContext" id="J9d-hB-519"/>
+            </connections>
+        </treeController>
         <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="positionWindow" animationBehavior="default" id="F0z-JX-Cv5">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -40,7 +45,7 @@
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
-                            <action selector="addChild:" target="-2" id="yNB-cs-LVz"/>
+                            <action selector="addChild:" target="-2" id="N7A-iS-hoI"/>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="306-5W-ahp">
@@ -246,14 +251,9 @@
                 </constraints>
             </view>
             <connections>
-                <outlet property="delegate" destination="-2" id="Y5Z-Mx-eJb"/>
+                <outlet property="delegate" destination="-2" id="uqM-7j-g7J"/>
             </connections>
             <point key="canvasLocation" x="56.5" y="217"/>
         </window>
-        <treeController mode="entity" entityName="EntityAffectation" automaticallyPreparesContent="YES" childrenKeyPath="children" countKeyPath="count" leafKeyPath="isLeaf" id="wjt-4d-L1H">
-            <connections>
-                <binding destination="-2" name="managedObjectContext" keyPath="self.managedObjectContext" id="J9d-hB-519"/>
-            </connections>
-        </treeController>
     </objects>
 </document>

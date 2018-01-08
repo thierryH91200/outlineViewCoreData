@@ -23,6 +23,10 @@
 		038F970C1FE7BB7E00606CB9 /* outlineViewCoreDataUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038F970B1FE7BB7E00606CB9 /* outlineViewCoreDataUITests.swift */; };
 		038F971B1FE7C03D00606CB9 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038F97191FE7C03D00606CB9 /* MainWindowController.swift */; };
 		038F971C1FE7C03D00606CB9 /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 038F971A1FE7C03D00606CB9 /* MainWindowController.xib */; };
+		03B3B9E720038EC5006735D4 /* AddModalWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B3B9E520038EC5006735D4 /* AddModalWindowController.swift */; };
+		03B3B9EB20038EEB006735D4 /* AddChildModalWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B3B9E920038EEB006735D4 /* AddChildModalWindowController.swift */; };
+		03B3B9EC20038EEB006735D4 /* AddChildModalWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03B3B9EA20038EEB006735D4 /* AddChildModalWindowController.xib */; };
+		03B3BA2C2003BBD7006735D4 /* AddModalWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03B3BA2B2003BBD7006735D4 /* AddModalWindowController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +70,10 @@
 		038F970D1FE7BB7E00606CB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		038F97191FE7C03D00606CB9 /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		038F971A1FE7C03D00606CB9 /* MainWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindowController.xib; sourceTree = "<group>"; };
+		03B3B9E520038EC5006735D4 /* AddModalWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddModalWindowController.swift; sourceTree = "<group>"; };
+		03B3B9E920038EEB006735D4 /* AddChildModalWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChildModalWindowController.swift; sourceTree = "<group>"; };
+		03B3B9EA20038EEB006735D4 /* AddChildModalWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddChildModalWindowController.xib; sourceTree = "<group>"; };
+		03B3BA2B2003BBD7006735D4 /* AddModalWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddModalWindowController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +148,10 @@
 				038D4DF81FF67E4600C86942 /* MainWindowControllerDragDrop.swift */,
 				038F96F71FE7BB7E00606CB9 /* outlineViewCoreData.entitlements */,
 				038F96EE1FE7BB7E00606CB9 /* outlineViewCoreData.xcdatamodeld */,
+				03B3B9E920038EEB006735D4 /* AddChildModalWindowController.swift */,
+				03B3B9EA20038EEB006735D4 /* AddChildModalWindowController.xib */,
+				03B3BA2B2003BBD7006735D4 /* AddModalWindowController.xib */,
+				03B3B9E520038EC5006735D4 /* AddModalWindowController.swift */,
 			);
 			path = outlineViewCoreData;
 			sourceTree = "<group>";
@@ -277,10 +289,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03B3B9EC20038EEB006735D4 /* AddChildModalWindowController.xib in Resources */,
 				030E92231FFE08DC002ECDA5 /* categorie.csv in Resources */,
 				038F96F21FE7BB7E00606CB9 /* Assets.xcassets in Resources */,
 				038F971C1FE7C03D00606CB9 /* MainWindowController.xib in Resources */,
 				038F96F51FE7BB7E00606CB9 /* MainMenu.xib in Resources */,
+				03B3BA2C2003BBD7006735D4 /* AddModalWindowController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,9 +323,11 @@
 				0363786F200214C600B47CF7 /* EntityAffectation+CoreDataProperties.swift in Sources */,
 				031E87B01FFE7BF0004E6B9F /* EntityCategory+CoreDataClass.swift in Sources */,
 				038F96ED1FE7BB7E00606CB9 /* AppDelegate.swift in Sources */,
+				03B3B9E720038EC5006735D4 /* AddModalWindowController.swift in Sources */,
 				038F971B1FE7C03D00606CB9 /* MainWindowController.swift in Sources */,
 				0363786E200214C600B47CF7 /* EntityAffectation+CoreDataClass.swift in Sources */,
 				031E87B11FFE7BF0004E6B9F /* EntityCategory+CoreDataProperties.swift in Sources */,
+				03B3B9EB20038EEB006735D4 /* AddChildModalWindowController.swift in Sources */,
 				038D4DF91FF67E4600C86942 /* MainWindowControllerDragDrop.swift in Sources */,
 				030E92221FFE061B002ECDA5 /* CSwiftV.swift in Sources */,
 				030E92201FFE0424002ECDA5 /* Affectation.swift in Sources */,

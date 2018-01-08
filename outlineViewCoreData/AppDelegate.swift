@@ -11,6 +11,9 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDelegate {
     
+    @IBOutlet weak var window: NSWindow!
+
+    
     var mainWindowController: MainWindowController?
     
     // find ~ -name app_db_file_name.sqlite
