@@ -135,8 +135,12 @@
 		038F96EB1FE7BB7E00606CB9 /* outlineViewCoreData */ = {
 			isa = PBXGroup;
 			children = (
-				0320F64D2000EDBE00C6C078 /* CoreData */,
 				038F96F11FE7BB7E00606CB9 /* Assets.xcassets */,
+				0320F64D2000EDBE00C6C078 /* CoreData */,
+				03B3B9E920038EEB006735D4 /* AddChildModalWindowController.swift */,
+				03B3B9EA20038EEB006735D4 /* AddChildModalWindowController.xib */,
+				03B3B9E520038EC5006735D4 /* AddModalWindowController.swift */,
+				03B3BA2B2003BBD7006735D4 /* AddModalWindowController.xib */,
 				030E921F1FFE0424002ECDA5 /* Affectation.swift */,
 				038F96EC1FE7BB7E00606CB9 /* AppDelegate.swift */,
 				030E921E1FFE0403002ECDA5 /* categorie.csv */,
@@ -148,10 +152,6 @@
 				038D4DF81FF67E4600C86942 /* MainWindowControllerDragDrop.swift */,
 				038F96F71FE7BB7E00606CB9 /* outlineViewCoreData.entitlements */,
 				038F96EE1FE7BB7E00606CB9 /* outlineViewCoreData.xcdatamodeld */,
-				03B3B9E920038EEB006735D4 /* AddChildModalWindowController.swift */,
-				03B3B9EA20038EEB006735D4 /* AddChildModalWindowController.xib */,
-				03B3BA2B2003BBD7006735D4 /* AddModalWindowController.xib */,
-				03B3B9E520038EC5006735D4 /* AddModalWindowController.swift */,
 			);
 			path = outlineViewCoreData;
 			sourceTree = "<group>";

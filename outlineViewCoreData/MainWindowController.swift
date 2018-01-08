@@ -116,14 +116,15 @@ class MainWindowController: NSWindowController, NSOutlineViewDelegate  {
         print(index)
         
         self.addModalWindowController = AddModalWindowController(windowNibName: NSNib.Name(rawValue: "AddModalWindowController"))
-        let windowAdd = addModalWindowController.window!
-        let windowApp = self.window
-        windowApp?.beginSheet(windowAdd, completionHandler: {(_ returnCode: NSApplication.ModalResponse) -> Void in
+        self.window?.beginSheet(addModalWindowController.window!, completionHandler: {(_ returnCode: NSApplication.ModalResponse) -> Void in
 
             print("Sheet closed")
             switch returnCode {
             case .OK:
                 print("Done button tapped in Custom Sheet")
+                let name = self.addModalWindowController.name.stringValue
+                print(name)
+                
             case .cancel:
                 print("Cancel button tapped in Custom Sheet")
             default:
@@ -139,14 +140,19 @@ class MainWindowController: NSWindowController, NSOutlineViewDelegate  {
         let index = anOutlineView.selectedRowIndexes
         print(index)
         
-        self.addChildModalWindowController = AddChildModalWindowController(windowNibName: NSNib.Name(rawValue: "AddModalWindowController"))
-        let windowAdd = addModalWindowController.window!
+        self.addChildModalWindowController = AddChildModalWindowController(windowNibName: NSNib.Name(rawValue: "AddChildModalWindowController"))
+        let windowAdd = addChildModalWindowController.window!
         let windowApp = self.window
-        windowApp?.beginSheet(windowAdd, completionHandler: {(_ returnCode: NSApplication.ModalResponse) -> Void in
+        windowApp?.beginSheet( windowAdd, completionHandler: {(_ returnCode: NSApplication.ModalResponse) -> Void in
             
             print("Sheet closed")
             switch returnCode {
             case .OK:
+                let name = self.addChildModalWindowController.name.stringValue
+                print(name)
+                let objectif = self.addChildModalWindowController.objectif.doubleValue
+                print(objectif)
+
                 print("Done button tapped in Custom Sheet")
             case .cancel:
                 print("Cancel button tapped in Custom Sheet")
@@ -155,13 +161,13 @@ class MainWindowController: NSWindowController, NSOutlineViewDelegate  {
             }
             //            addModalWindowController = nil
         })
-
-
     }
     
     @IBAction func remove(_ sender: Any) {
         
         let selected = anOutlineView.selectedRowIndexes.map { Int($0) }
+        print(selected)
+        return
         let item = anOutlineView.item(atRow: selected[0])
         
         let item1 = item as? NSTreeNode
@@ -177,9 +183,6 @@ class MainWindowController: NSWindowController, NSOutlineViewDelegate  {
             managedObjectContext.delete(item2!)
         }
         anTreeController.rearrangeObjects()
-
-        
-        
     }
     
     @IBAction func save(_ sender: Any) {
