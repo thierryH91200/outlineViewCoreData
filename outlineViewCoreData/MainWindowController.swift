@@ -18,6 +18,10 @@ class MainWindowController: NSWindowController, NSOutlineViewDelegate  {
     
     @objc var managedObjectContext: NSManagedObjectContext = (NSApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
+    var moc: NSManagedObjectContext = (NSApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+
+    
+    
     @objc dynamic var customSortDescriptors = [NSSortDescriptor(key: "name", ascending: true, selector: #selector(NSString.localizedStandardCompare(_:)))];
 
     var addModalWindowController:AddModalWindowController!
@@ -121,6 +125,8 @@ class MainWindowController: NSWindowController, NSOutlineViewDelegate  {
                 entity.name = name
                 entity.color = color
                 
+                self.anTreeController.rearrangeObjects()
+                
                 print("Done button tapped in Custom Sheet")
             case .cancel:
                 
@@ -130,7 +136,6 @@ class MainWindowController: NSWindowController, NSOutlineViewDelegate  {
             }
             self.addModalWindowController = nil
         })
-        anTreeController.rearrangeObjects()
     }
 
     @IBAction func addChild(_ sender: Any) {
@@ -164,10 +169,13 @@ class MainWindowController: NSWindowController, NSOutlineViewDelegate  {
                 let objectif = self.addChildModalWindowController.objectif.doubleValue
                 print(objectif)
                 
-                let entity = EntityCategory(context: self.managedObjectContext)
+                let entity = EntityCategory(context: self.moc)
                 entity.name = name
                 entity.objectif = objectif
                 entity.affectation = aff
+                
+                self.anTreeController.rearrangeObjects()
+
 
                 print("Done button tapped in Custom Sheet")
             case .cancel:
@@ -177,7 +185,7 @@ class MainWindowController: NSWindowController, NSOutlineViewDelegate  {
             }
             self.addModalWindowController = nil
         })
-        anTreeController.rearrangeObjects()
+        
     }
     
     @IBAction func remove(_ sender: Any) {
