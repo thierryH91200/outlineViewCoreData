@@ -121,11 +121,14 @@ class MainWindowController: NSWindowController, NSOutlineViewDelegate  {
             print("Sheet closed")
             switch returnCode {
             case .OK:
-                print("Done button tapped in Custom Sheet")
                 let name = self.addModalWindowController.name.stringValue
                 print(name)
+                let color = self.addModalWindowController.colorWell.color
+                print(color)
                 
+                print("Done button tapped in Custom Sheet")
             case .cancel:
+                
                 print("Cancel button tapped in Custom Sheet")
             default:
                 break
@@ -167,14 +170,13 @@ class MainWindowController: NSWindowController, NSOutlineViewDelegate  {
         
         let selected = anOutlineView.selectedRowIndexes.map { Int($0) }
         print(selected)
-        return
+
         let item = anOutlineView.item(atRow: selected[0])
         
         let item1 = item as? NSTreeNode
         let item2 = item1?.representedObject as? NSManagedObject
-        let result = item2 is EntityAffectation
-        print(result)
-        if result == true {
+
+        if item2 is EntityAffectation {
             managedObjectContext.delete(item2!)
         } else {
             let entity = item2 as! EntityCategory
@@ -191,7 +193,6 @@ class MainWindowController: NSWindowController, NSOutlineViewDelegate  {
             try managedObjectContext.save()
         } catch { }
         anTreeController.rearrangeObjects()
-
     }
 }
 
@@ -207,19 +208,7 @@ class KSHeaderCellView2 : NSTableCellView {
     
     @IBOutlet weak var colorWell:NSColorWell!
     @IBOutlet weak var total:NSTextField!
-    
-//    var fillColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
-    
-    //    override func draw(_ dirtyRect: NSRect) {
-    //        super.draw(dirtyRect)
-    //
-    //        let bPath = NSBezierPath(rect: dirtyRect)
-    //
-    //        fillColor.set()
-    //        bPath.fill()
-    //    }
 }
-
 
 class KSTableCellView2 : NSTableCellView {
     

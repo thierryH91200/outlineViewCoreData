@@ -9,6 +9,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="AddModalWindowController" customModule="THOutlineViewCoreData" customModuleProvider="target">
             <connections>
                 <outlet property="affectation" destination="XDc-IU-B7S" id="HEc-Df-Va7"/>
+                <outlet property="cancel" destination="5aZ-FC-4xR" id="dpj-8K-5dY"/>
                 <outlet property="colorWell" destination="r1W-iM-tBD" id="ecw-RZ-7F9"/>
                 <outlet property="name" destination="LYM-op-4J0" id="E60-3x-1LN"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
@@ -68,7 +69,7 @@ Gw
                                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LYM-op-4J0">
                                     <rect key="frame" x="147" y="51" width="153" height="22"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Affectation" drawsBackground="YES" id="cz4-gb-0Jl">
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="Affectation" placeholderString="Affectation" drawsBackground="YES" id="cz4-gb-0Jl">
                                         <font key="font" metaFont="system"/>
                                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>

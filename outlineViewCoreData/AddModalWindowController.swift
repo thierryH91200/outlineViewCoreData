@@ -11,8 +11,11 @@ import Cocoa
 class AddModalWindowController: NSWindowController {
     
     @IBOutlet weak var affectation: NSButton!
+    
     @IBOutlet weak var name: NSTextField!
     @IBOutlet weak var colorWell: NSColorWell!
+    
+    @IBOutlet weak var cancel: NSButton!
     
     override func windowDidLoad() {
         super.windowDidLoad()
@@ -24,23 +27,20 @@ class AddModalWindowController: NSWindowController {
         affectation.isBordered = false //Important
         affectation.wantsLayer = true
         affectation.layer?.backgroundColor = NSColor.orange.cgColor
-
+        
+        if cancel.acceptsFirstResponder {
+            self.window?.makeFirstResponder(cancel)
+        }
     }
-    
-    
+
     @IBAction func didTapCancelButton(_ sender: Any ) {
         window?.sheetParent?.endSheet(window!, returnCode: .cancel)
         self.window!.close()
-
     }
+    
     @IBAction func didTapDoneButton(_ sender: Any) {
         window?.sheetParent?.endSheet(window!, returnCode: .OK )
         self.window!.close()
-
     }
-    
-    
-    
-    
-    
+
 }
