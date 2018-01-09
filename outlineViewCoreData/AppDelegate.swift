@@ -9,23 +9,15 @@
 import Cocoa
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBOutlet weak var window: NSWindow!
 
-    
     var mainWindowController: MainWindowController?
-    
-    // find ~ -name app_db_file_name.sqlite
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
         initializeLibraryAndShowMainWindow()
-        NSUserNotificationCenter.default.delegate = self
-    }
-    
-    func userNotificationCenter(_ center: NSUserNotificationCenter, shouldPresent notification: NSUserNotification) -> Bool {
-        return true
     }
     
     func initializeLibraryAndShowMainWindow() {

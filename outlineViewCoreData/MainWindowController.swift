@@ -18,7 +18,6 @@ class MainWindowController: NSWindowController, NSOutlineViewDelegate  {
     
     @objc var managedObjectContext: NSManagedObjectContext = (NSApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    @objc var dataSort = [NSSortDescriptor(key: "name", ascending: false)]
     @objc dynamic var customSortDescriptors = [NSSortDescriptor(key: "name", ascending: true, selector: #selector(NSString.localizedStandardCompare(_:)))];
 
     var addModalWindowController:AddModalWindowController!
@@ -26,16 +25,7 @@ class MainWindowController: NSWindowController, NSOutlineViewDelegate  {
 
     override func windowDidLoad() {
         super.windowDidLoad()
-        
-        // Just for the fun
-        //        let notification = NSUserNotification()
-        //        notification.title = "File Uploaded"
-        //        notification.subtitle = "example.txt"
-        //        notification.informativeText = "/Users/thierryH24/Documents/example.txt"
-        //        notification.soundName = NSUserNotificationDefaultSoundName
-        //        notification.contentImage = NSImage(named: NSImage.Name("icon_Upload-Information-icon_24x24"))
-        //        NSUserNotificationCenter.default.deliver(notification)
-        
+                
         anOutlineView.delegate = self
         
         _ = Affectation.sharedInstance.getAllEntity()
@@ -94,7 +84,7 @@ class MainWindowController: NSWindowController, NSOutlineViewDelegate  {
     @IBAction func changeCouleur(_ sender : NSColorWell)
     {
         let row = anOutlineView.row(for: sender as NSView)
-        if row == -1 { return }
+        guard  row != -1 else { return }
         
         let color = sender.color
         
@@ -112,9 +102,10 @@ class MainWindowController: NSWindowController, NSOutlineViewDelegate  {
     }
     
     @IBAction func add(_ sender: Any) {
-        let index = anOutlineView.selectedRowIndexes
-        print(index)
         
+        let selected = anOutlineView.selectedRowIndexes.map { Int($0) }
+        print(selected)
+
         self.addModalWindowController = AddModalWindowController(windowNibName: NSNib.Name(rawValue: "AddModalWindowController"))
         self.window?.beginSheet(addModalWindowController.window!, completionHandler: {(_ returnCode: NSApplication.ModalResponse) -> Void in
 
@@ -126,23 +117,40 @@ class MainWindowController: NSWindowController, NSOutlineViewDelegate  {
                 let color = self.addModalWindowController.colorWell.color
                 print(color)
                 
+                let entity = EntityAffectation(context: self.managedObjectContext)
+                entity.name = name
+                entity.color = color
+                
                 print("Done button tapped in Custom Sheet")
             case .cancel:
                 
-                print("Cancel button tapped in Custom Sheet")
+                print("Cancel button tapped in Custom Add Sheet")
             default:
                 break
             }
-//            addModalWindowController = nil
+            self.addModalWindowController = nil
         })
+        anTreeController.rearrangeObjects()
     }
-    
 
     @IBAction func addChild(_ sender: Any) {
         
-        let index = anOutlineView.selectedRowIndexes
-        print(index)
+        let selected = anOutlineView.selectedRowIndexes.map { Int($0) }
+        print(selected)
         
+        var aff : EntityAffectation
+        
+        let item = anOutlineView.item(atRow: selected[0])
+        let item1 = item as? NSTreeNode
+        let item2 = item1?.representedObject as? NSManagedObject
+        
+        if item2 is EntityAffectation {
+            aff = item2 as! EntityAffectation
+        } else {
+            let entity = item2 as! EntityCategory
+            aff = entity.affectation!
+        }
+
         self.addChildModalWindowController = AddChildModalWindowController(windowNibName: NSNib.Name(rawValue: "AddChildModalWindowController"))
         let windowAdd = addChildModalWindowController.window!
         let windowApp = self.window
@@ -155,15 +163,21 @@ class MainWindowController: NSWindowController, NSOutlineViewDelegate  {
                 print(name)
                 let objectif = self.addChildModalWindowController.objectif.doubleValue
                 print(objectif)
+                
+                let entity = EntityCategory(context: self.managedObjectContext)
+                entity.name = name
+                entity.objectif = objectif
+                entity.affectation = aff
 
                 print("Done button tapped in Custom Sheet")
             case .cancel:
-                print("Cancel button tapped in Custom Sheet")
+                print("Cancel button tapped in Custom AddChild Sheet")
             default:
                 break
             }
-            //            addModalWindowController = nil
+            self.addModalWindowController = nil
         })
+        anTreeController.rearrangeObjects()
     }
     
     @IBAction func remove(_ sender: Any) {
@@ -181,7 +195,7 @@ class MainWindowController: NSWindowController, NSOutlineViewDelegate  {
         } else {
             let entity = item2 as! EntityCategory
             let aff = entity.affectation
-            aff?.removeFromCategory(entity)
+            aff?.removeFromCategory(entity)         // break just the link
             managedObjectContext.delete(item2!)
         }
         anTreeController.rearrangeObjects()

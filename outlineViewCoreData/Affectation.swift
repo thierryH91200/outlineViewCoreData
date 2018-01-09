@@ -13,12 +13,10 @@ import CoreData
 class Affectation {
     
     @objc  var mainObjectContext: NSManagedObjectContext = (NSApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-
     
     fileprivate enum AffectationDisplayProperty: String {
         case name     = "name"
-        case objectif    = "objectif"
-//        case uuid     = "uuid"
+        case color    = "color"
     }
     
     static let sharedInstance = Affectation()
@@ -30,19 +28,9 @@ class Affectation {
         let entity = EntityAffectation(context: mainObjectContext)
         
         entity.name = name
-//        entity.objectif = 0.0
-//        entity.color = NSColor.black
-//        entity.uuid = uuid
-//        entity.compte = compteCourant
+        entity.color = NSColor.black
     }
     
-    // delete Entity
-//    func removeEntity(withUUID: UUID)
-//    {
-//        if let i = entities.index(where: {$0.uuid == withUUID}) {
-//            mainObjectContext.delete(entities[i])
-//        }
-//    }
     
     func removeEntity(entity: EntityAffectation)
     {
@@ -55,45 +43,10 @@ class Affectation {
         return i!
     }
     
-//    func editEntity( entity: EntityAffectation) {
-//
-//        let request = NSFetchRequest<EntityAffectation>(entityName: "EntityAffectation")
-////        let predicate = NSPredicate(format: "compte == %@", compteCourant!)
-//        request.predicate = predicate
-//
-//        do {
-//            let searchResults = try mainObjectContext.fetch(request)
-//            for result in searchResults
-//            {
-//                if result.uuid == entity.uuid
-//                {
-//                    result.name = entity.name
-//                    //                    result.category = entity.color
-//                    result.compte = compteCourant
-//                    break
-//                }
-//            }
-//
-//        } catch {
-//            print("Error with request: \(error)")
-//        }
-//    }
-    
-//    func entityColor(name: String) -> NSColor {
-//
-//        let i = entities.index{$0.name == name}
-//        if i == nil {
-//            return NSColor.black
-//        }
-//        return entities[i!].color as! NSColor
-//    }
-    
     func getAllEntity() -> [EntityAffectation] {
         
         do {
             let fetchRequest = NSFetchRequest<EntityAffectation>(entityName: "EntityAffectation")
-//            let predicate = NSPredicate(format: "compte == %@", compteCourant!)
-//            fetchRequest.predicate = predicate
             fetchRequest.sortDescriptors = [NSSortDescriptor(key: AffectationDisplayProperty.name.rawValue, ascending:true)]
             
             entities = try mainObjectContext.fetch(fetchRequest)
@@ -107,7 +60,6 @@ class Affectation {
     
     func defaultEntities()
     {
-        
         var isEmpty : Bool {
             do{
                 let request = NSFetchRequest<NSFetchRequestResult>(entityName: "EntityAffectation")
@@ -183,10 +135,9 @@ class Affectation {
             }catch {
                 print("Error fetching data from CoreData")
             }
-            print(entities.count)
         }
-        
     }
+    
 }
 
 
