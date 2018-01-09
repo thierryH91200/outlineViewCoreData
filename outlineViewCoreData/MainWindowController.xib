@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13771" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -113,15 +114,17 @@
                                                         </textField>
                                                         <colorWell translatesAutoresizingMaskIntoConstraints="NO" id="wQs-Z7-7n4">
                                                             <rect key="frame" x="343" y="-3" width="44" height="23"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="44" id="rmH-FX-4D0"/>
+                                                            </constraints>
                                                             <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <connections>
                                                                 <action selector="changeCouleur:" target="-2" id="y04-4b-q4F"/>
                                                                 <binding destination="9nR-xS-3S7" name="value" keyPath="objectValue.color" id="VdJ-l9-Lhl"/>
                                                             </connections>
                                                         </colorWell>
-                                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="whp-ua-fv7">
+                                                        <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="whp-ua-fv7">
                                                             <rect key="frame" x="230" y="-6" width="100" height="22"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" id="cfn-Af-jTL">
                                                                 <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="currency" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" minimumFractionDigits="2" maximumFractionDigits="2" id="22M-Hn-6UZ"/>
                                                                 <font key="font" metaFont="system"/>
@@ -135,13 +138,17 @@
                                                         </textField>
                                                     </subviews>
                                                     <constraints>
+                                                        <constraint firstItem="wQs-Z7-7n4" firstAttribute="leading" secondItem="whp-ua-fv7" secondAttribute="trailing" constant="15" id="3is-Qj-tZd"/>
+                                                        <constraint firstItem="whp-ua-fv7" firstAttribute="leading" secondItem="Ku3-tS-UVN" secondAttribute="trailing" constant="8" symbolic="YES" id="9hi-uo-nAk"/>
                                                         <constraint firstItem="wQs-Z7-7n4" firstAttribute="top" secondItem="9nR-xS-3S7" secondAttribute="top" constant="-3" id="9oI-UG-XCs"/>
                                                         <constraint firstItem="Ku3-tS-UVN" firstAttribute="centerX" secondItem="9nR-xS-3S7" secondAttribute="centerX" constant="-82" id="C2t-di-a5K"/>
                                                         <constraint firstItem="wQs-Z7-7n4" firstAttribute="centerY" secondItem="Ku3-tS-UVN" secondAttribute="centerY" id="EC0-z4-3b2"/>
+                                                        <constraint firstAttribute="bottom" secondItem="whp-ua-fv7" secondAttribute="bottom" constant="-6" id="IRw-Os-qe1"/>
                                                         <constraint firstAttribute="trailing" secondItem="wQs-Z7-7n4" secondAttribute="trailing" constant="3" id="JRP-H6-YRd"/>
                                                         <constraint firstItem="Ku3-tS-UVN" firstAttribute="leading" secondItem="9nR-xS-3S7" secondAttribute="leading" constant="2" id="cyA-86-Wsp"/>
+                                                        <constraint firstItem="whp-ua-fv7" firstAttribute="top" secondItem="9nR-xS-3S7" secondAttribute="top" constant="1" id="cyV-RH-N0q"/>
+                                                        <constraint firstItem="whp-ua-fv7" firstAttribute="firstBaseline" secondItem="Ku3-tS-UVN" secondAttribute="baseline" id="dP0-OX-epR"/>
                                                         <constraint firstItem="Ku3-tS-UVN" firstAttribute="centerY" secondItem="9nR-xS-3S7" secondAttribute="centerY" id="i81-3O-cVI"/>
-                                                        <constraint firstItem="wQs-Z7-7n4" firstAttribute="leading" secondItem="Ku3-tS-UVN" secondAttribute="trailing" constant="119" id="zSG-U7-sA4"/>
                                                     </constraints>
                                                     <connections>
                                                         <outlet property="colorWell" destination="wQs-Z7-7n4" id="QMH-Wu-s4b"/>

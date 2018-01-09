@@ -19,17 +19,17 @@ class MainWindowController: NSWindowController, NSOutlineViewDelegate  {
     @objc var managedObjectContext: NSManagedObjectContext = (NSApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     var moc: NSManagedObjectContext = (NSApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-
+    
     
     
     @objc dynamic var customSortDescriptors = [NSSortDescriptor(key: "name", ascending: true, selector: #selector(NSString.localizedStandardCompare(_:)))];
-
+    
     var addModalWindowController:AddModalWindowController!
     var addChildModalWindowController:AddChildModalWindowController!
-
+    
     override func windowDidLoad() {
         super.windowDidLoad()
-                
+        
         anOutlineView.delegate = self
         
         _ = Affectation.sharedInstance.getAllEntity()
@@ -109,10 +109,10 @@ class MainWindowController: NSWindowController, NSOutlineViewDelegate  {
         
         let selected = anOutlineView.selectedRowIndexes.map { Int($0) }
         print(selected)
-
+        
         self.addModalWindowController = AddModalWindowController(windowNibName: NSNib.Name(rawValue: "AddModalWindowController"))
         self.window?.beginSheet(addModalWindowController.window!, completionHandler: {(_ returnCode: NSApplication.ModalResponse) -> Void in
-
+            
             print("Sheet closed")
             switch returnCode {
             case .OK:
@@ -137,7 +137,7 @@ class MainWindowController: NSWindowController, NSOutlineViewDelegate  {
             self.addModalWindowController = nil
         })
     }
-
+    
     @IBAction func addChild(_ sender: Any) {
         
         let selected = anOutlineView.selectedRowIndexes.map { Int($0) }
@@ -155,7 +155,7 @@ class MainWindowController: NSWindowController, NSOutlineViewDelegate  {
             let entity = item2 as! EntityCategory
             aff = entity.affectation!
         }
-
+        
         self.addChildModalWindowController = AddChildModalWindowController(windowNibName: NSNib.Name(rawValue: "AddChildModalWindowController"))
         let windowAdd = addChildModalWindowController.window!
         let windowApp = self.window
@@ -175,8 +175,8 @@ class MainWindowController: NSWindowController, NSOutlineViewDelegate  {
                 entity.affectation = aff
                 
                 self.anTreeController.rearrangeObjects()
-
-
+                
+                
                 print("Done button tapped in Custom Sheet")
             case .cancel:
                 print("Cancel button tapped in Custom AddChild Sheet")
@@ -192,12 +192,12 @@ class MainWindowController: NSWindowController, NSOutlineViewDelegate  {
         
         let selected = anOutlineView.selectedRowIndexes.map { Int($0) }
         print(selected)
-
+        
         let item = anOutlineView.item(atRow: selected[0])
         
         let item1 = item as? NSTreeNode
         let item2 = item1?.representedObject as? NSManagedObject
-
+        
         if item2 is EntityAffectation {
             managedObjectContext.delete(item2!)
         } else {
@@ -216,6 +216,14 @@ class MainWindowController: NSWindowController, NSOutlineViewDelegate  {
         } catch { }
         anTreeController.rearrangeObjects()
     }
+    
+    func outlineViewSelectionDidChange(_ notification: Notification)
+    {
+        let index = anOutlineView.selectedRow
+        let rowView = anOutlineView.rowView(atRow: index, makeIfNecessary: false)
+        rowView?.isEmphasized = true
+    }
+
 }
 
 extension MainWindowController: NSTextFieldDelegate {
