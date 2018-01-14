@@ -208,8 +208,8 @@
                                         </tableColumn>
                                     </tableColumns>
                                     <connections>
-                                        <outlet property="dataSource" destination="-2" id="amh-fL-zfd"/>
-                                        <outlet property="delegate" destination="-2" id="SZa-8o-zO2"/>
+                                        <outlet property="dataSource" destination="-2" id="NJU-uY-WZh"/>
+                                        <outlet property="delegate" destination="-2" id="fWa-mZ-I81"/>
                                     </connections>
                                 </outlineView>
                             </subviews>
@@ -227,6 +227,9 @@
                             <rect key="frame" x="0.0" y="0.0" width="393" height="23"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </tableHeaderView>
+                        <connections>
+                            <outlet property="menu" destination="559-Lh-Z8Q" id="aSJ-qg-MHO"/>
+                        </connections>
                     </scrollView>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XIl-8K-rAw">
                         <rect key="frame" x="299" y="1" width="70" height="32"/>
@@ -258,9 +261,39 @@
                 </constraints>
             </view>
             <connections>
-                <outlet property="delegate" destination="-2" id="uqM-7j-g7J"/>
+                <outlet property="delegate" destination="-2" id="abT-ES-Fid"/>
             </connections>
             <point key="canvasLocation" x="56.5" y="217"/>
         </window>
+        <menu title="Table Menu" id="559-Lh-Z8Q">
+            <items>
+                <menuItem title="Cut" id="BK5-Iu-M2Q">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="cut:" target="-2" id="ll9-WL-7Fs"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Copy" id="lOJ-7E-B33">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="copy:" target="-2" id="cic-Ns-m1P"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Paste" id="yfn-lI-g6j">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="paste:" target="-2" id="C8K-Al-0LO"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="0Yc-P0-phs"/>
+                <menuItem title="Delete" id="QUI-cP-UH0">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="delete:" target="-2" id="glM-pL-NtD"/>
+                    </connections>
+                </menuItem>
+            </items>
+            <point key="canvasLocation" x="-3" y="557"/>
+        </menu>
     </objects>
 </document>

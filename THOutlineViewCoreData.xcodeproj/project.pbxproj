@@ -12,6 +12,7 @@
 		030E92231FFE08DC002ECDA5 /* categorie.csv in Resources */ = {isa = PBXBuildFile; fileRef = 030E921E1FFE0403002ECDA5 /* categorie.csv */; };
 		031E87B01FFE7BF0004E6B9F /* EntityCategory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031E87AC1FFE7BF0004E6B9F /* EntityCategory+CoreDataClass.swift */; };
 		031E87B11FFE7BF0004E6B9F /* EntityCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031E87AD1FFE7BF0004E6B9F /* EntityCategory+CoreDataProperties.swift */; };
+		0338896020091A2400E53FFA /* MainWindowControllerAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0338895F20091A2400E53FFA /* MainWindowControllerAction.swift */; };
 		0363786E200214C600B47CF7 /* EntityAffectation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0363786C200214C600B47CF7 /* EntityAffectation+CoreDataClass.swift */; };
 		0363786F200214C600B47CF7 /* EntityAffectation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0363786D200214C600B47CF7 /* EntityAffectation+CoreDataProperties.swift */; };
 		038D4DF91FF67E4600C86942 /* MainWindowControllerDragDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038D4DF81FF67E4600C86942 /* MainWindowControllerDragDrop.swift */; };
@@ -23,6 +24,7 @@
 		038F970C1FE7BB7E00606CB9 /* outlineViewCoreDataUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038F970B1FE7BB7E00606CB9 /* outlineViewCoreDataUITests.swift */; };
 		038F971B1FE7C03D00606CB9 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038F97191FE7C03D00606CB9 /* MainWindowController.swift */; };
 		038F971C1FE7C03D00606CB9 /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 038F971A1FE7C03D00606CB9 /* MainWindowController.xib */; };
+		03941A6520067E8C0083A2DE /* ExtensionTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03941A6420067E8C0083A2DE /* ExtensionTableView.swift */; };
 		03B3B9E720038EC5006735D4 /* AddModalWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B3B9E520038EC5006735D4 /* AddModalWindowController.swift */; };
 		03B3B9EB20038EEB006735D4 /* AddChildModalWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B3B9E920038EEB006735D4 /* AddChildModalWindowController.swift */; };
 		03B3B9EC20038EEB006735D4 /* AddChildModalWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03B3B9EA20038EEB006735D4 /* AddChildModalWindowController.xib */; };
@@ -52,6 +54,7 @@
 		030E92211FFE061B002ECDA5 /* CSwiftV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSwiftV.swift; sourceTree = "<group>"; };
 		031E87AC1FFE7BF0004E6B9F /* EntityCategory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EntityCategory+CoreDataClass.swift"; sourceTree = "<group>"; };
 		031E87AD1FFE7BF0004E6B9F /* EntityCategory+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EntityCategory+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0338895F20091A2400E53FFA /* MainWindowControllerAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowControllerAction.swift; sourceTree = "<group>"; };
 		0363786C200214C600B47CF7 /* EntityAffectation+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EntityAffectation+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0363786D200214C600B47CF7 /* EntityAffectation+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EntityAffectation+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		038D4DF81FF67E4600C86942 /* MainWindowControllerDragDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowControllerDragDrop.swift; sourceTree = "<group>"; };
@@ -70,6 +73,7 @@
 		038F970D1FE7BB7E00606CB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		038F97191FE7C03D00606CB9 /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		038F971A1FE7C03D00606CB9 /* MainWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindowController.xib; sourceTree = "<group>"; };
+		03941A6420067E8C0083A2DE /* ExtensionTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTableView.swift; sourceTree = "<group>"; };
 		03B3B9E520038EC5006735D4 /* AddModalWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddModalWindowController.swift; sourceTree = "<group>"; };
 		03B3B9E920038EEB006735D4 /* AddChildModalWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChildModalWindowController.swift; sourceTree = "<group>"; };
 		03B3B9EA20038EEB006735D4 /* AddChildModalWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddChildModalWindowController.xib; sourceTree = "<group>"; };
@@ -137,21 +141,20 @@
 			children = (
 				038F96F11FE7BB7E00606CB9 /* Assets.xcassets */,
 				0320F64D2000EDBE00C6C078 /* CoreData */,
-				03B3B9E920038EEB006735D4 /* AddChildModalWindowController.swift */,
-				03B3B9EA20038EEB006735D4 /* AddChildModalWindowController.xib */,
-				03B3B9E520038EC5006735D4 /* AddModalWindowController.swift */,
-				03B3BA2B2003BBD7006735D4 /* AddModalWindowController.xib */,
+				03941A6320067E2D0083A2DE /* AddData */,
 				030E921F1FFE0424002ECDA5 /* Affectation.swift */,
 				038F96EC1FE7BB7E00606CB9 /* AppDelegate.swift */,
 				030E921E1FFE0403002ECDA5 /* categorie.csv */,
 				030E92211FFE061B002ECDA5 /* CSwiftV.swift */,
 				038F96F61FE7BB7E00606CB9 /* Info.plist */,
 				038F96F31FE7BB7E00606CB9 /* MainMenu.xib */,
+				03941A6420067E8C0083A2DE /* ExtensionTableView.swift */,
 				038F97191FE7C03D00606CB9 /* MainWindowController.swift */,
 				038F971A1FE7C03D00606CB9 /* MainWindowController.xib */,
 				038D4DF81FF67E4600C86942 /* MainWindowControllerDragDrop.swift */,
 				038F96F71FE7BB7E00606CB9 /* outlineViewCoreData.entitlements */,
 				038F96EE1FE7BB7E00606CB9 /* outlineViewCoreData.xcdatamodeld */,
+				0338895F20091A2400E53FFA /* MainWindowControllerAction.swift */,
 			);
 			path = outlineViewCoreData;
 			sourceTree = "<group>";
@@ -174,6 +177,17 @@
 			path = outlineViewCoreDataUITests;
 			sourceTree = "<group>";
 		};
+		03941A6320067E2D0083A2DE /* AddData */ = {
+			isa = PBXGroup;
+			children = (
+				03B3B9E920038EEB006735D4 /* AddChildModalWindowController.swift */,
+				03B3B9EA20038EEB006735D4 /* AddChildModalWindowController.xib */,
+				03B3B9E520038EC5006735D4 /* AddModalWindowController.swift */,
+				03B3BA2B2003BBD7006735D4 /* AddModalWindowController.xib */,
+			);
+			path = AddData;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -184,6 +198,7 @@
 				038F96E51FE7BB7E00606CB9 /* Sources */,
 				038F96E61FE7BB7E00606CB9 /* Frameworks */,
 				038F96E71FE7BB7E00606CB9 /* Resources */,
+				03501BA020077AD500F2E2A1 /* Additionnal Warnings */,
 			);
 			buildRules = (
 			);
@@ -314,6 +329,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		03501BA020077AD500F2E2A1 /* Additionnal Warnings */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Additionnal Warnings";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "KEYWORDS=\"TODO:|FIXME:|\\?\\?\\?:|\\!\\!\\!:\"\nfind \"${SRCROOT}\" \\( -name \"*.h\" -or -name \"*.m\" -or -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($KEYWORDS).*\\$\" | perl -p -e \"s/($KEYWORDS)/ warning: \\$1/\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		038F96E51FE7BB7E00606CB9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -323,6 +355,7 @@
 				0363786F200214C600B47CF7 /* EntityAffectation+CoreDataProperties.swift in Sources */,
 				031E87B01FFE7BF0004E6B9F /* EntityCategory+CoreDataClass.swift in Sources */,
 				038F96ED1FE7BB7E00606CB9 /* AppDelegate.swift in Sources */,
+				0338896020091A2400E53FFA /* MainWindowControllerAction.swift in Sources */,
 				03B3B9E720038EC5006735D4 /* AddModalWindowController.swift in Sources */,
 				038F971B1FE7C03D00606CB9 /* MainWindowController.swift in Sources */,
 				0363786E200214C600B47CF7 /* EntityAffectation+CoreDataClass.swift in Sources */,
@@ -331,6 +364,7 @@
 				038D4DF91FF67E4600C86942 /* MainWindowControllerDragDrop.swift in Sources */,
 				030E92221FFE061B002ECDA5 /* CSwiftV.swift in Sources */,
 				030E92201FFE0424002ECDA5 /* Affectation.swift in Sources */,
+				03941A6520067E8C0083A2DE /* ExtensionTableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,9 +1,9 @@
 /**
- @file      EntityCategory+CoreDataClass.swift
- @author    thierryH91200
- @date      07/01/2018
+ @file      ExtensionTableView.swift
+ @author    thierryH24
+ @date      10/01/2018
 
- Copyright 2018 thierryH91200
+ Copyright 2018 thierryH24
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -20,9 +20,16 @@
 */
 
 import Foundation
-import CoreData
+import Cocoa
 
-@objc(EntityCategory)
-public class EntityCategory: NSManagedObject {
 
+class KSHeaderCellView2 : NSTableCellView {
+    
+    @IBOutlet weak var colorWell:NSColorWell!
+    @IBOutlet weak var total:NSTextField!
+}
+
+class KSTableCellView2 : NSTableCellView {
+    
+    @IBOutlet weak var objectif:NSTextField!
 }
